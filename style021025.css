@@ -1,0 +1,651 @@
+@font-face {
+  font-family: "HGKUnica77";
+  src: url("HGKBUnica77VIPBeta.ttf");
+}
+
+@font-face {
+  font-family: "HGKUnica77-Mono";
+  src: url("unicamono.ttf");
+}
+
+@font-face {
+  font-family: "HGKUnisoft";
+  src: url("Unisoft77VF.ttf");
+}
+
+/*General Style*/
+
+p {
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "HGKUnica77-MONO", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 92, "ital" 0, "wdth" 100;
+  font-size: 0.8vw;
+  /* background-color: rgb(255, 61, 61); */
+}
+
+#Spikes-top {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 105%;
+  z-index: -10;
+}
+
+#backdrop {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(37, 226, 43, 0);
+  height: 100%;
+  width: 100%;
+  opacity: 100%;
+  /* overflow: hidden; */
+}
+
+.separationLine {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-around;
+  font-family: "HGKUnisoft", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 183, "ital" 0;
+  letter-spacing: 0.31vw;
+  height: 1.1vw;
+  width: 100%;
+  font-size: 1.41vw;
+  /* background-color: deeppink; */
+}
+
+/*Utility Classes*/
+
+#reciept {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  min-height: 48.5vw;
+  overflow: show;
+  background-color: rgb(255, 255, 255);
+  z-index: 5;
+  padding: 1.5vh; /*Affects Backdrop*/
+}
+
+.recieptRegion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px;
+  width: 100%;
+  height: fit-content;
+  opacity: 85%;
+}
+
+/* stkr */
+
+.sticker {
+  opacity: 98%;
+}
+
+#blursvg {
+  filter: blur(10px);
+}
+
+/*recieptRegion*/
+
+/*01-TITLE*/
+#recieptRegion01 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-content: flex-start;
+  font-family: "HGKUnica77-MONO", Arial, Helvetica, sans-serif;
+  /* height: fit-content; */
+  /* background-color: blueviolet; */
+}
+
+#title {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  margin-top: -1.5vw;
+  width: 100%;
+}
+
+#subTitle {
+  display: flex;
+  flex-direction: row;
+  /* background-color: navajowhite; */
+}
+
+#titleUNICA {
+  font-family: "HGKUnica77", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 228, "ital" 0, "wdth" 100;
+  font-size: 5vw;
+  margin-bottom: -1.5vw;
+}
+
+#titleFAMILY {
+  font-family: "HGKUnica77-Mono", monospace;
+  font-variation-settings: "wght" 500, "ital" 0;
+  font-size: 2.5vw;
+  animation: titleFAMILY 2s ease-in-out infinite;
+}
+
+@keyframes titleFAMILY {
+  0% {
+    font-variation-settings: "wght" 500, "ital" 0;
+  }
+
+  25% {
+    font-variation-settings: "wght" 500, "ital" 0;
+  }
+
+  50% {
+    font-variation-settings: "wght" 500, "ital" 5;
+  }
+  100% {
+    font-variation-settings: "wght" 500, "ital" 0;
+  }
+}
+
+#titleSHOP {
+  font-family: "HGKUnisoft", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 179, "ital" 10;
+  font-size: 2.5vw;
+  animation: titleSHOP 2s ease-in-out infinite;
+}
+
+@keyframes titleSHOP {
+  0% {
+    font-variation-settings: "wght" 179, "ital" 10;
+    letter-spacing: 0vw;
+  }
+
+  75% {
+    font-variation-settings: "wght" 79, "ital" 0;
+    letter-spacing: 0.2vw;
+  }
+
+  100% {
+    font-variation-settings: "wght" 179, "ital" 10;
+    letter-spacing: 0vw;
+  }
+}
+
+#titleINFO {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center;
+    text-align: center; */
+  height: 1.1vw;
+  width: 100%;
+  font-size: 0.8vw;
+  /* background-color: darkorange; */
+}
+
+.opening-hours {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 1.1vw;
+  /* background-color: aquamarine; */
+  /* margin-top: -0.1vw;*/
+  margin-bottom: 0.2vw;
+}
+
+#MoFr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#Sa {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/*02-GRAPHS*/
+#recieptRegion02 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8vw;
+  min-height: fit-content;
+  overflow: visible;
+  /* background-color: yellow; */
+  margin-bottom: 0.25vw;
+}
+
+#XYgraph {
+  position: relative;
+  display: flex;
+  height: auto;
+  width: 100%;
+  /* background-color: olivedrab; */
+}
+
+#XYgraphArea {
+  position: relative;
+  height: 10vw;
+
+  /* background-color: crimson; */
+}
+
+#rectangle {
+  display: block;
+  height: 10vw;
+  /* background-color: blueviolet; */
+}
+
+#xyPointer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  font-family: "HGKUnisoft", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 179, "ital" 10;
+  font-size: 5vw;
+  display: none;
+}
+
+#xyPointer-1 {
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  font-family: "HGKUnisoft", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 179, "ital" 10;
+  font-size: 5vw;
+  display: none;
+}
+
+#xyPointer-2 {
+  position: absolute;
+  top: 60px;
+  left: 150px;
+  font-family: "HGKUnisoft", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 179, "ital" 10;
+  font-size: 5vw;
+  display: none;
+}
+
+#xyPointer-3 {
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  font-family: "HGKUnisoft", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 179, "ital" 10;
+  font-size: 5vw;
+  display: none;
+}
+
+#XYPointer-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#ROTATIONgraph {
+  display: flex;
+  flex-shrink: 1;
+  flex-direction: column;
+  justify-content: right;
+  align-items: flex-end;
+  height: fit-content;
+  width: fit-content;
+  overflow: show;
+  /* background-color: crimson; */
+}
+
+#circle {
+  height: 10vw;
+  overflow: show;
+  /* background-color: blueviolet; */
+}
+
+#pointerRotation {
+  transform-origin: bottom center;
+  transform-box: fill-box;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* .pointerRotate{
+  transform: rotate(0deg);
+  transition: all 1000ms ease-in-out;
+} */
+
+/* FONT-SELECTION */
+
+#recieptRegion03 {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  height: 7.5vw;
+  /* background-color: red; */
+}
+
+#fontSelectRegion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+  /* background-color: rgb(0, 191, 255); */
+}
+
+#fsr-UnicaMono {
+  font-family: "HGKUnica77-Mono", monospace;
+  font-size: 2.5vw;
+  line-height: 100%;
+}
+
+.fsr-UnicaMonoStandby {
+  font-variation-settings: "wght" 200, "ital" 0;
+  transform: translate(-0.5%, 0%);
+  transition: all 500ms ease-in-out;
+}
+
+.fsr-UnicaMonoActive {
+  font-variation-settings: "wght" 700, "ital" 0;
+  transform: translate(32%, 0%);
+  transition: all 500ms ease-in-out;
+}
+
+#fsr-UnicaSoft {
+  font-family: "HGKUnisoft", Arial, Helvetica, sans-serif;
+  font-size: 2.5vw;
+  line-height: 100%;
+}
+
+.fsr-UnicaSoftActive {
+  font-variation-settings: "wght" 107, "ital" 10;
+  transform: translate(0%, 0%);
+  transition: all 500ms ease-in-out;
+}
+
+.fsr-UnicaSoftStandby {
+  font-variation-settings: "wght" 500, "ital" 0;
+  transform: translate(32%, 0%);
+  transition: all 500ms ease-in-out;
+}
+
+#fsr-Unica {
+  font-family: "HGKUnica77", Arial, Helvetica, sans-serif;
+  font-size: 2.5vw;
+  line-height: 100%;
+}
+
+.fsr-UnicaActive {
+  font-variation-settings: "wght" 191, "slnt" 0, "wdth" 100;
+  transform: translate(47.2%, 0%);
+  transition: all 500ms ease-in-out;
+}
+
+.fsr-UnicaStandby {
+  font-variation-settings: "wght" 57, "slnt" 0, "wdth" 100;
+  transform: translate(-0.7%, 0%);
+  transition: all 500ms ease-in-out;
+}
+
+/* RECIEPT SUM UP */
+
+#recieptRegion04 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-grow: 1;
+  font-family: "HGKUnica77-Mono", monospace;
+  font-variation-settings: "wght" 200, "ital" 0;
+  font-size: 0.8vw;
+  /* background-color: yellow; */
+}
+
+.recieptPosition-1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  /* background-color: greenyellow; */
+  height: 0.8vw;
+}
+
+.recieptPosition-2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 0.6vw;
+  padding-bottom: 2.1vw;
+  height: 2.5vw;
+  /* background-color: aqua; */
+}
+
+.recieptPosition-3 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  /* background-color: rgb(186, 186, 255); */
+  margin-top: -0.7vw;
+}
+
+#fruitValue-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+  width: 100%;
+}
+
+#fruitValue-2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+#fruitValue-3 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+#fruitValue-4 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+#fruitNumber-1 {
+  font-family: "HGKUnisoft", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 179, "ital" 10;
+  font-size: 5vw;
+  margin-top: -1.2vw;
+}
+
+#fruitNumber-2 {
+  font-family: "HGKUnisoft", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 179, "ital" 10;
+  font-size: 5vw;
+  margin-top: -1.2vw;
+}
+
+#fruitNumber-3 {
+  font-family: "HGKUnisoft", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 179, "ital" 10;
+  font-size: 5vw;
+  margin-top: -1.2vw;
+}
+
+#fruitNumber-4 {
+  font-family: "HGKUnisoft", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 179, "ital" 10;
+  font-size: 5vw;
+  margin-top: -1.2vw;
+}
+
+/* MWS */
+
+#TOTAL {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: -1vw;
+}
+
+/* GIANT_LETTERS */
+
+#giant-Letters {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-content: flex-end;
+  margin-bottom: -1vw;
+  align-self: center;
+  font-size: 5vw;
+  gap: 0.5vw;
+
+  /* background-color: orangered; */
+}
+
+#Letter-A {
+  font-family: "HGKUnisoft", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 57, "ital" 0;
+  transition: all 500ms ease-in-out;
+  animation-name: Letter-B;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  align-self: flex-end;
+}
+
+@keyframes Letter-B {
+  0% {
+    font-variation-settings: "wght" 57, "ital" 10;
+  }
+
+  50% {
+    font-variation-settings: "wght" 528, "ital" 0;
+  }
+
+  100% {
+    font-variation-settings: "wght" 128, "ital" 10;
+  }
+}
+
+#Letter-B {
+  font-family: "HGKUnica77-Mono", monospace;
+  font-variation-settings: "wght" 57, "ital" 10;
+  transition: all 500ms ease-in-out;
+  animation-name: Letter-B;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  align-self: flex-end;
+}
+
+@keyframes Letter-B {
+  0% {
+    font-variation-settings: "wght" 57, "ital" 10;
+  }
+
+  50% {
+    font-variation-settings: "wght" 728, "ital" 0;
+  }
+
+  100% {
+    font-variation-settings: "wght" 57, "ital" 10;
+  }
+}
+
+#Letter-C {
+  font-family: "HGKUnica77", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 228, "slnt" 0, "wdth" 1;
+  transition: all 500ms ease-in-out;
+  animation-name: Letter-C;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  align-self: flex-end;
+}
+
+@keyframes Letter-C {
+  0% {
+    font-variation-settings: "wght" 57, "slnt" 0, "wdth" 0;
+  }
+
+  50% {
+    font-variation-settings: "wght" 528, "slnt" 0, "wdth" 10;
+  }
+
+  100% {
+    font-variation-settings: "wght" 128, "slnt" 0, "wdth" 0;
+  }
+}
+
+#Letter-D {
+  font-family: "HGKUnica77", Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 128, "slnt" 10, "wdth" 1;
+  transition: all 500ms ease-in-out;
+  animation-name: Letter-D;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  align-self: flex-end;
+}
+
+@keyframes Letter-D {
+  0% {
+    font-variation-settings: "wght" 57, "slnt" 0, "wdth" 0;
+  }
+
+  50% {
+    font-variation-settings: "wght" 228, "slnt" 0, "wdth" 100;
+  }
+
+  100% {
+    font-variation-settings: "wght" 128, "slnt" 0, "wdth" 0;
+  }
+}

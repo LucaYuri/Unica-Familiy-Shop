@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <svg id="circle" viewBox="0 0 521.62 519" width="300">
+        <g id="pointerRotation">
+            <line x1="251.98" y1="263.42" x2="251.98" y2="16.44" style="fill:none;stroke:#000;stroke-width:10px;" />
+            <circle cx="251.98" cy="16.44" r="16.44" style="fill:#000;" />
+        </g>
+    </svg>
+
+    <script>
+        const pointerRotation = document.getElementById('pointerRotation');
+        let angle = 0;
+
+        // simulate live updates
+        setInterval(() => { angle = (angle + 5) % 360; }, 100);
+
+        function updateRotation() {
+            pointerRotation.style.transform = `rotate(${angle}deg)`;
+            requestAnimationFrame(updateRotation);
+        }
+
+        updateRotation();
+    </script>
+
+    <style>
+        #pointerRotation {
+            transform-box: fill-box;
+            transform-origin: 50% 50%;
+            transition: transform 0.1s linear;
+        }
+    </style>
+
+</body>
+
+</html>

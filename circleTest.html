@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ASCII Circle</title>
+<style>
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    padding: 20px;
+    display: grid;
+    gap: 12px;
+    max-width: 900px;
+  }
+  label { display:inline-flex; align-items:center; gap:8px; }
+  pre {
+    background:#111;
+    color:#dcdcdc;
+    padding:14px;
+    border-radius:8px;
+    overflow:auto;
+    white-space: pre;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1;           /* easier aspect control in JS */
+    font-size: 12px;
+  }
+  .controls { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <label>Radius: <input id="radius" type="range" min="5" max="60" value="18"></label>
+  <label><input id="filled" type="checkbox"> Filled</label>
+  <label>Char: <input id="char" type="text" value="*" maxlength="1" style="width:30px;text-align:center"></label>
+  <button id="draw">Draw</button>
+</div>
+
+<pre id="ascii" aria-label="ASCII circle"></pre>
+
+<script>
+const ascii = document.getElementById('ascii');
+const radiusInput = document.getElementById('radius');
+const filledInput = document.getElementById('filled');
+const charInput = document.getElementById('char');
+const drawBtn = document.getElementById('draw');
+
+function drawCircle(r, filled=false, ch='*') {
+  // Aspect ratio correction: characters are usually taller than wide.
+  // Adjust 'x' scale to visually approximate a circle.
+  const xScale = 0.5; // tweak this if your font looks squished/wide
+  const thickness = 0.6; // for outline thickness
+  let out = '';
+  for (let y = -r; y <= r; y++) {
+    for (let x = -r; x <= r; x++) {
+      const dx = x * xScale;
+      const dist = Math.sqrt(dx*dx + y*y);
+      if (filled) {
+        if (dist <= r + 0.25) out += ch;
+        else out += ' ';
+      } else {
+        // outline: check if distance is near radius
+        if (Math.abs(dist - r) <= thickness) out += ch;
+        else out += ' ';
+      }
+    }
+    out += '\n';
+  }
+  ascii.textContent = out;
+}
+
+// initial draw
+drawCircle(parseInt(radiusInput.value,10), filledInput.checked, charInput.value || '*');
+
+// event listeners
+drawBtn.addEventListener('click', () => {
+  drawCircle(parseInt(radiusInput.value,10), filledInput.checked, charInput.value || '*');
+});
+
+// draw on change for immediacy
+radiusInput.addEventListener('input', () => drawCircle(parseInt(radiusInput.value,10), filledInput.checked, charInput.value || '*'));
+filledInput.addEventListener('change', () => drawCircle(parseInt(radiusInput.value,10), filledInput.checked, charInput.value || '*'));
+charInput.addEventListener('input', () => {
+  const ch = charInput.value || '*';
+  drawCircle(parseInt(radiusInput.value,10), filledInput.checked, ch[0]);
+});
+</script>
+
+</body>
+</html>
